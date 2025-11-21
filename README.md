@@ -57,13 +57,13 @@
   <tr>
     <td width="50%" align="center">
       <h3>🎮 3D Virtual Monitor</h3>
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm91Zml2cnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jbp6xj/giphy.gif" width="100%" />
+      <img src="https://media.giphy.com/media/LmNwrBhejkK9EFWlHO/giphy.gif" width="100%" />
       <br/><br/>
       <i>Nhúng Game ReactJS trực tiếp vào màn hình TV ảo ngay trên web bằng CSS 3D Transform.</i>
     </td>
     <td width="50%" align="center">
       <h3>🧠 Logic Algorithm</h3>
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LdOyjZ7io5Msw/giphy.gif" width="100%" />
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2QzNmVhNzR1emxid3dydHF0MXd2bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kHHtQyO2yFqQzWwWjF/giphy.gif" width="100%" />
       <br/><br/>
       <i>Mini-game "Knight's Tour" (Mã đi tuần) xử lý bằng thuật toán thuần JavaScript.</i>
     </td>
