@@ -8,8 +8,7 @@
 
 <div align="center">
   <br>
-  <img src="https://media.giphy.com/media/L1R1TVI2uGc81gUF86/giphy.gif" width="180"/>
-  
+  <img src="https://github.com/VietPh37030/portfolio-v4/blob/main/assets/mr_krabs_welcome.gif?raw=true" width="180"/> 
   ### <span style="color:#f59e0b">CORE SYSTEM ENGINEER</span> & <span style="color:#00f3ff">INTERACTIVE WEB CREATOR</span>
 
   <p align="center"> 
@@ -57,13 +56,13 @@
   <tr>
     <td width="50%" align="center">
       <h3>🎮 3D Virtual Monitor</h3>
-      <img src="https://media.giphy.com/media/LmNwrBhejkK9EFWlHO/giphy.gif" width="100%" />
+      <img src="https://github.com/VietPh37030/portfolio-v4/blob/main/assets/monitor_3d_demo.gif?raw=true" width="100%" />
       <br/><br/>
       <i>Nhúng Game ReactJS trực tiếp vào màn hình TV ảo ngay trên web bằng CSS 3D Transform.</i>
     </td>
     <td width="50%" align="center">
       <h3>🧠 Logic Algorithm</h3>
-      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2QzNmVhNzR1emxid3dydHF0MXd2bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kHHtQyO2yFqQzWwWjF/giphy.gif" width="100%" />
+      <img src="https://github.com/VietPh37030/portfolio-v4/blob/main/assets/knight_tour_game.gif?raw=true" width="100%" />
       <br/><br/>
       <i>Mini-game "Knight's Tour" (Mã đi tuần) xử lý bằng thuật toán thuần JavaScript.</i>
     </td>
