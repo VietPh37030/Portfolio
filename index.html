@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <title>Phạm Việt Anh | EAS & Core System Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            neon: '#00f3ff', // Cyan Neon (Màu chủ đạo mới cho EAS/Tech)
+            primary: '#f59e0b', // Giữ lại màu cam làm điểm nhấn phụ
+            dark: '#050505',
+          },
+          fontFamily: {
+            mono: ['"Fira Code"', 'monospace'], // Font code cho ngầu
+          },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-glow': 'pulseGlow 2s infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 10px #00f3ff' },
+              '50%': { boxShadow: '0 0 25px #00f3ff' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;700&display=swap');
+
+    body { font-family: 'Inter', sans-serif; background-color: #050505; color: #fff; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #050505; }
+    ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #00f3ff; }
+
+    /* Glassmorphism Nâng cao */
+    .glass {
+      background: rgba(20, 20, 30, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 243, 255, 0.1); /* Viền neon mờ */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+    
+    .glass-strong {
+      background: rgba(5, 5, 10, 0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(0, 243, 255, 0.15);
+    }
+
+    /* TV / Monitor Effect (WOW Factor) */
+    .monitor-wrapper {
+      perspective: 1000px;
+    }
+    .monitor-frame {
+      background: #111;
+      border-radius: 12px;
+      padding: 10px;
+      border: 1px solid #333;
+      box-shadow: 
+        0 0 0 2px #222,
+        0 20px 50px -10px rgba(0,0,0,0.8),
+        0 0 60px -10px rgba(0, 243, 255, 0.1); /* Glow nhẹ phía sau */
+      transform-style: preserve-3d;
+      transition: transform 0.3s;
+    }
+    .monitor-screen {
+      background: #000;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      position: relative;
+      border: 1px solid #333;
+    }
+    .monitor-stand {
+      width: 120px;
+      height: 40px;
+      background: linear-gradient(to bottom, #222, #111);
+      margin: 0 auto;
+      clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+      position: relative;
+      z-index: -1;
+      margin-top: -5px;
+    }
+    .monitor-base {
+      width: 200px;
+      height: 10px;
+      background: #111;
+      margin: 0 auto;
+      border-radius: 4px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .power-light {
+      width: 4px;
+      height: 4px;
+      background: #00f3ff;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00f3ff;
+      position: absolute;
+      bottom: 8px;
+      right: 15px;
+    }
+
+    /* Matrix Text Gradient */
+    .text-matrix {
+      background: linear-gradient(90deg, #fff, #00f3ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Chess Board Styles (Giữ lại từ V2) */
+    .chess-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; width: 100%; max-width: 300px; margin: 0 auto; }
+    .chess-cell { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; cursor: pointer; border-radius: 4px; transition: all 0.2s; }
+    .chess-cell.black { background-color: #0f172a; color: #475569; }
+    .chess-cell.white { background-color: #1e293b; color: #94a3b8; }
+    .chess-cell:hover { background-color: #00f3ff !important; color: #000; }
+    .chess-cell.active { background-color: #f59e0b !important; color: #000; box-shadow: 0 0 15px #f59e0b; }
+    .chess-cell.bug { color: #ef4444; text-shadow: 0 0 5px #f00; }
+    .chess-cell.possible { border: 1px dashed #00f3ff; box-shadow: inset 0 0 10px rgba(0, 243, 255, 0.2); }
+
+    #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.5; }
+  </style>
+</head>
+<body class="overflow-x-hidden selection:bg-neon selection:text-black">
+
+  <div id="canvas-container"></div>
+
+  <nav class="fixed w-full z-50 glass-strong top-0">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="font-mono font-bold text-xl tracking-tighter text-white">
+          <span class="text-neon">&lt;</span>PVA<span class="text-neon">/&gt;</span>
+        </div>
+      </div>
+      
+      <div class="flex items-center gap-4">
+        <div class="hidden sm:flex bg-slate-900 rounded-full p-1 border border-slate-800">
+          <button onclick="changeLang('vi')" id="btn-vi" class="px-3 py-1 text-xs rounded-full font-bold transition-all bg-neon text-black shadow-[0_0_10px_#00f3ff]">VI</button>
+          <button onclick="changeLang('en')" id="btn-en" class="px-3 py-1 text-xs rounded-full transition-all text-slate-400 hover:text-white">EN</button>
+          <button onclick="changeLang('zh')" id="btn-zh" class="px-3 py-1 text-xs rounded-full transition-all text-slate-400 hover:text-white">中文</button>
+        </div>
+        <a href="https://github.com/VietPh37030" target="_blank" class="text-slate-400 hover:text-white transition transform hover:scale-110">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="relative pt-32 pb-10 px-4 min-h-screen flex flex-col justify-center">
+    <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center z-10">
+      
+      <div class="text-center lg:text-left space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neon/30 bg-neon/5 text-neon text-xs font-mono animate-pulse-glow">
+          <span class="w-2 h-2 rounded-full bg-neon"></span>
+          <span data-i18n="hero.status">System Online: Ready to deploy</span>
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+          <span class="block text-slate-300 text-2xl mb-2 font-normal" data-i18n="hero.greeting">Xin chào, tôi là Việt Anh</span>
+          <span class="text-matrix">Core System & <br/>EAS Engineer</span>
+        </h1>
+
+        <p class="text-lg text-slate-400 leading-relaxed max-w-lg mx-auto lg:mx-0" data-i18n="hero.desc">
+          Kiến tạo hệ thống phần mềm doanh nghiệp lõi (Core EAS) vững chắc và những trải nghiệm Web tương tác đa chiều. 
+          Kết hợp tư duy logic chặt chẽ của <b>C#/.NET Core</b> với sự linh hoạt của <b>React/Flutter</b>.
+        </p>
+
+        <div class="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+          <a href="#projects" class="px-6 py-3 rounded-lg bg-neon text-black font-bold hover:bg-white transition shadow-[0_0_20px_rgba(0,243,255,0.4)] flex items-center gap-2">
+            <i class="fas fa-project-diagram"></i> <span data-i18n="hero.cta">Xem Dự Án</span>
+          </a>
+          <a href="#contact" class="px-6 py-3 rounded-lg border border-slate-700 hover:border-neon hover:text-neon transition flex items-center gap-2">
+            <i class="fas fa-paper-plane"></i> <span data-i18n="hero.contact">Liên Hệ</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="monitor-wrapper animate-float">
+        <div class="relative group">
+          <div class="absolute -top-10 left-1/2 -translate-x-1/2 lg:left-auto lg:right-0 lg:translate-x-0 bg-slate-900 border border-neon/50 text-neon px-4 py-1 rounded-md text-xs font-mono shadow-[0_0_15px_rgba(0,243,255,0.3)] z-20">
+            LIVE DEMO: Cartoon Game (React/Vite)
+          </div>
+
+          <div class="monitor-frame">
+            <div class="monitor-screen">
+              <div class="absolute inset-0 flex items-center justify-center bg-black z-0 pointer-events-none">
+                <i class="fas fa-spinner fa-spin text-3xl text-slate-700"></i>
+              </div>
+              <iframe src="https://game-zeta-ivory-52.vercel.app/" class="w-full h-full relative z-10 border-none" title="Cartoon Game"></iframe>
+            </div>
+            <div class="power-light"></div>
+          </div>
+          <div class="monitor-stand"></div>
+          <div class="monitor-base"></div>
+          
+          <p class="text-center text-xs text-slate-500 mt-4 font-mono">
+            <i class="fas fa-gamepad"></i> <span data-i18n="tv.hint">Bạn có thể chơi game trực tiếp trên màn hình này</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 pb-20 flex flex-col lg:flex-row gap-8">
+    
+    <div class="lg:w-1/3 space-y-6">
+      <div class="glass rounded-2xl p-6 border-l-4 border-neon">
+        <div class="flex items-center gap-3 mb-3">
+           <div class="p-2 bg-neon/10 rounded-lg text-neon"><i class="fas fa-server"></i></div>
+           <h3 class="text-xl font-bold text-white">Gemtek</h3>
+        </div>
+        <p class="text-xs text-neon font-mono mb-2">Backend & Core EAS Developer</p>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4" data-i18n="exp.gemtek">
+          Phát triển hệ thống phần mềm doanh nghiệp (EAS) quy mô lớn. 
+          Xử lý nghiệp vụ phức tạp với <b>Oracle</b>, <b>SQL Server</b> và xây dựng Core API bằng <b>.NET Core (C#)</b>.
+        </p>
+        <div class="flex flex-wrap gap-2 text-[10px] font-mono">
+          <span class="px-2 py-1 bg-slate-900 border border-slate-700 text-neon rounded">C#</span>
+          <span class="px-2 py-1 bg-slate-900 border border-slate-700 text-neon rounded">.NET Core</span>
+          <span class="px-2 py-1 bg-slate-900 border border-slate-700 text-neon rounded">Oracle</span>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-5 border border-slate-800">
+        <div class="flex justify-between items-center mb-4">
+           <h3 class="font-bold text-slate-200 flex items-center gap-2">
+             <i class="fas fa-brain text-primary"></i> <span data-i18n="game.title">Logic Test</span>
+           </h3>
+           <button onclick="initGame()" class="text-xs text-primary hover:text-white transition"><i class="fas fa-redo"></i> Reset</button>
+        </div>
+        <p class="text-xs text-slate-400 mb-4" data-i18n="game.desc">Điều khiển quân Mã (Knight) ăn hết bọ (Bug).</p>
+        
+        <div class="bg-black/50 p-2 rounded-lg">
+           <div id="chess-board" class="chess-grid"></div>
+        </div>
+        <div class="flex justify-between text-xs font-mono text-slate-500 mt-2">
+           <span>Moves: <span id="move-count" class="text-white">0</span></span>
+           <span>Bugs: <span id="bug-count" class="text-red-400">0</span></span>
+        </div>
+      </div>
+
+      <div class="glass rounded-2xl p-6">
+        <h3 class="font-bold text-slate-200 mb-4 border-b border-slate-700 pb-2" data-i18n="exp.title">Kinh nghiệm khác</h3>
+        <ul class="space-y-4">
+          <li class="relative pl-4 border-l-2 border-slate-700 hover:border-primary transition">
+            <h4 class="text-sm font-bold text-white">Freelance (The Key)</h4>
+            <p class="text-xs text-slate-400">E-learning Platform for English Center</p>
+          </li>
+          <li class="relative pl-4 border-l-2 border-slate-700 hover:border-primary transition">
+            <h4 class="text-sm font-bold text-white">True Connect</h4>
+            <p class="text-xs text-slate-400">Angular, ReactJS, Next.js</p>
+          </li>
+          <li class="relative pl-4 border-l-2 border-slate-700 hover:border-primary transition">
+            <h4 class="text-sm font-bold text-white">Thinkdiff</h4>
+            <p class="text-xs text-slate-400">ReactJS, React Native</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="lg:w-2/3" id="projects">
+      <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+        <i class="fas fa-layer-group text-neon"></i> <span data-i18n="projects.title">Dự án & Tech Stack</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        
+        <a href="https://github.com/VietPh37030/scrape-flow-clone.git" target="_blank" class="glass p-5 rounded-xl hover:bg-slate-800/80 transition group relative overflow-hidden block border-t border-transparent hover:border-neon">
+          <div class="flex justify-between items-start mb-3">
+            <div class="p-2 bg-slate-800 rounded-lg text-white font-bold text-xs border border-slate-600">WEB</div>
+            <i class="fas fa-external-link-alt text-slate-600 group-hover:text-neon transition"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white group-hover:text-neon transition">Scrape Flow Clone</h3>
+          <p class="text-sm text-slate-400 mt-2 h-10 line-clamp-2">Công cụ tự động hóa luồng dữ liệu (Web Automation) mô phỏng logic node-based.</p>
+          <div class="mt-4 flex gap-2">
+            <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">Next.js</span>
+            <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">Node.js</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/VietPh37030/Chatapp_demo.git" target="_blank" class="glass p-5 rounded-xl hover:bg-slate-800/80 transition group relative overflow-hidden block border-t border-transparent hover:border-blue-400">
+           <div class="flex justify-between items-start mb-3">
+             <div class="p-2 bg-slate-800 rounded-lg text-white font-bold text-xs border border-slate-600">MOBILE</div>
+             <i class="fas fa-external-link-alt text-slate-600 group-hover:text-blue-400 transition"></i>
+           </div>
+           <h3 class="text-lg font-bold text-white group-hover:text-blue-400 transition">Real-time Chat App</h3>
+           <p class="text-sm text-slate-400 mt-2 h-10 line-clamp-2">Ứng dụng nhắn tin đa nền tảng mượt mà, xử lý socket thời gian thực.</p>
+           <div class="mt-4 flex gap-2">
+             <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">Flutter</span>
+             <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">Dart</span>
+             <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">Socket.io</span>
+           </div>
+         </a>
+
+         <a href="https://github.com/VietPh37030/Manga-Winform.git" target="_blank" class="glass p-5 rounded-xl hover:bg-slate-800/80 transition group relative overflow-hidden block border-t border-transparent hover:border-purple-400">
+           <div class="flex justify-between items-start mb-3">
+             <div class="p-2 bg-slate-800 rounded-lg text-white font-bold text-xs border border-slate-600">DESKTOP</div>
+             <i class="fas fa-external-link-alt text-slate-600 group-hover:text-purple-400 transition"></i>
+           </div>
+           <h3 class="text-lg font-bold text-white group-hover:text-purple-400 transition">Manga Manager</h3>
+           <p class="text-sm text-slate-400 mt-2 h-10 line-clamp-2">Phần mềm quản lý thư viện truyện tranh trên Windows, xử lý dữ liệu local.</p>
+           <div class="mt-4 flex gap-2">
+             <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">C#</span>
+             <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">WinForm</span>
+             <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">.NET</span>
+           </div>
+         </a>
+
+         <a href="https://github.com/giapdq04/the_key.git" target="_blank" class="glass p-5 rounded-xl hover:bg-slate-800/80 transition group relative overflow-hidden block border-t border-transparent hover:border-yellow-400">
+           <div class="flex justify-between items-start mb-3">
+             <div class="p-2 bg-slate-800 rounded-lg text-white font-bold text-xs border border-slate-600">FREELANCE</div>
+             <i class="fas fa-external-link-alt text-slate-600 group-hover:text-yellow-400 transition"></i>
+           </div>
+           <h3 class="text-lg font-bold text-white group-hover:text-yellow-400 transition">The Key (E-learning)</h3>
+           <p class="text-sm text-slate-400 mt-2 h-10 line-clamp-2">Hệ thống học trực tuyến cho trung tâm tiếng Anh: Quản lý khóa học, bài kiểm tra.</p>
+           <div class="mt-4 flex gap-2">
+             <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">Web Platform</span>
+             <span class="px-2 py-1 bg-slate-900 text-xs text-slate-300 rounded font-mono">Education</span>
+           </div>
+         </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-900/50 py-8 text-center" id="contact">
+    <div class="flex justify-center gap-6 mb-4">
+      <a href="mailto:phamvietanh19218@gmail.com" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-neon hover:text-black transition">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/VietPh37030" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-white hover:text-black transition">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <p class="text-slate-500 text-sm">© <span id="year"></span> Phạm Việt Anh. Built with Passion & Code.</p>
+  </footer>
+
+  <script>
+    // --- 1. CONFIG & INIT ---
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // --- 2. THREE.JS BACKGROUND (Cyan Network) ---
+    function initThreeJS() {
+      const container = document.getElementById('canvas-container');
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      container.appendChild(renderer.domElement);
+
+      // Particles
+      const geometry = new THREE.BufferGeometry();
+      const count = 200;
+      const positions = new Float32Array(count * 3);
+      for(let i=0; i<count*3; i++) positions[i] = (Math.random() - 0.5) * 20;
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      
+      const material = new THREE.PointsMaterial({ size: 0.04, color: 0x00f3ff, transparent: true, opacity: 0.6 });
+      const particles = new THREE.Points(geometry, material);
+      scene.add(particles);
+      
+      const linesMaterial = new THREE.LineBasicMaterial({ color: 0x00f3ff, transparent: true, opacity: 0.05 });
+      // (Lines logic simplified for performance, using just dots for clean look)
+
+      camera.position.z = 5;
+
+      let mouseX = 0, mouseY = 0;
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX / window.innerWidth - 0.5;
+        mouseY = e.clientY / window.innerHeight - 0.5;
+      });
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+        particles.rotation.y += 0.001;
+        particles.rotation.y += mouseX * 0.05;
+        particles.rotation.x += mouseY * 0.05;
+        renderer.render(scene, camera);
+      };
+      animate();
+
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    }
+    initThreeJS();
+
+    // --- 3. MULTI-LANGUAGE SYSTEM ---
+    const i18nData = {
+      vi: {
+        'hero.status': 'Hệ thống sẵn sàng: Open for work',
+        'hero.greeting': 'Xin chào, tôi là Việt Anh',
+        'hero.desc': 'Kiến tạo hệ thống phần mềm doanh nghiệp lõi (Core EAS) vững chắc và những trải nghiệm Web tương tác đa chiều. Kết hợp tư duy logic chặt chẽ của C#/.NET Core với sự linh hoạt của React/Flutter.',
+        'hero.cta': 'Xem Dự Án', 'hero.contact': 'Liên Hệ',
+        'tv.hint': 'Bạn có thể chơi game trực tiếp trên màn hình này',
+        'exp.gemtek': 'Phát triển hệ thống phần mềm doanh nghiệp (EAS) quy mô lớn. Xử lý nghiệp vụ phức tạp với Oracle, SQL Server và xây dựng Core API bằng .NET Core (C#).',
+        'exp.title': 'Kinh nghiệm khác',
+        'projects.title': 'Dự án & Tech Stack',
+        'game.title': 'Logic Test', 'game.desc': 'Điều khiển quân Mã (Knight) ăn hết bọ (Bug).'
+      },
+      en: {
+        'hero.status': 'System Online: Ready to deploy',
+        'hero.greeting': 'Hello, I am Viet Anh',
+        'hero.desc': 'Architecting robust Enterprise Application Software (EAS) and immersive Interactive Web experiences. Blending C# Backend logic with React/Flutter versatility.',
+        'hero.cta': 'View Projects', 'hero.contact': 'Contact',
+        'tv.hint': 'You can play the game directly on this screen',
+        'exp.gemtek': 'Developing large-scale Enterprise Application Software (EAS). Handling complex business logic with Oracle, SQL Server and building Core APIs with .NET Core (C#).',
+        'exp.title': 'Other Experience',
+        'projects.title': 'Projects & Stack',
+        'game.title': 'Logic Test', 'game.desc': 'Control the Knight to catch all bugs.'
+      },
+      zh: {
+        'hero.status': '系统在线：准备部署',
+        'hero.greeting': '你好，我是 Viet Anh',
+        'hero.desc': '构建强大的企业应用软件 (EAS) 和沉浸式交互网络体验。结合 C# 后端逻辑与 React/Flutter 的灵活性。',
+        'hero.cta': '查看项目', 'hero.contact': '联系方式',
+        'tv.hint': '您可以在此屏幕上直接玩游戏',
+        'exp.gemtek': '开发大规模企业应用软件 (EAS)。使用 Oracle, SQL Server 处理复杂业务逻辑，并使用 .NET Core (C#) 构建核心 API。',
+        'exp.title': '其他经验',
+        'projects.title': '项目与技术栈',
+        'game.title': '逻辑测试', 'game.desc': '控制骑士捕捉所有的错误 (Bug)。'
+      }
+    };
+
+    function changeLang(lang) {
+      document.querySelectorAll('nav button').forEach(b => {
+        b.className = 'px-3 py-1 text-xs rounded-full transition-all text-slate-400 hover:text-white';
+      });
+      document.getElementById('btn-'+lang).className = 'px-3 py-1 text-xs rounded-full font-bold transition-all bg-neon text-black shadow-[0_0_10px_#00f3ff]';
+      
+      const texts = i18nData[lang];
+      for(let key in texts) {
+        const el = document.querySelector(`[data-i18n="${key}"]`);
+        if(el) el.innerHTML = texts[key]; // innerHTML to keep bold tags
+      }
+    }
+
+    // --- 4. MINI CHESS GAME (Logic kept from V2) ---
+    let knightPos = 0, bugs = [], moves = 0;
+    function initGame() {
+      const boardEl = document.getElementById('chess-board');
+      boardEl.innerHTML = '';
+      moves = 0; knightPos = 0;
+      document.getElementById('move-count').innerText = moves;
+      
+      bugs = [];
+      while(bugs.length < 3) {
+        let r = Math.floor(Math.random() * 25);
+        if(r !== 0 && !bugs.includes(r)) bugs.push(r);
+      }
+      updateBugUI();
+      renderBoard();
+    }
+    function renderBoard() {
+      const boardEl = document.getElementById('chess-board');
+      boardEl.innerHTML = '';
+      for(let i=0; i<25; i++) {
+        const cell = document.createElement('div');
+        const row = Math.floor(i/5), col = i%5;
+        cell.className = `chess-cell ${(row+col)%2===1 ? 'black' : 'white'}`;
+        if(i===knightPos) { cell.innerHTML = '<i class="fas fa-chess-knight"></i>'; cell.classList.add('active'); }
+        else if(bugs.includes(i)) { cell.innerHTML = '<i class="fas fa-bug"></i>'; cell.classList.add('bug'); }
+        
+        if(isValidMove(knightPos, i)) {
+          cell.classList.add('possible');
+          cell.onclick = () => moveKnight(i);
+        }
+        boardEl.appendChild(cell);
+      }
+    }
+    function isValidMove(curr, target) {
+      const r1 = Math.floor(curr/5), c1 = curr%5;
+      const r2 = Math.floor(target/5), c2 = target%5;
+      const dx = Math.abs(c1-c2), dy = Math.abs(r1-r2);
+      return (dx===1 && dy===2) || (dx===2 && dy===1);
+    }
+    function moveKnight(target) {
+      knightPos = target; moves++;
+      document.getElementById('move-count').innerText = moves;
+      if(bugs.includes(target)) {
+        bugs = bugs.filter(b => b !== target);
+        updateBugUI();
+        anime({ targets: '#chess-board .active i', scale: [1,1.5,1], duration: 300 });
+        if(bugs.length === 0) alert("System Cleaned! All bugs fixed.");
+      }
+      renderBoard();
+    }
+    function updateBugUI() { document.getElementById('bug-count').innerText = bugs.length; }
+    initGame();
+  </script>
+</body>
+</html>
