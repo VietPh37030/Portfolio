@@ -1,83 +1,99 @@
 <div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=35&duration=3000&pause=1000&color=00F3FF&center=true&vCenter=true&width=500&lines=Hi,+I'm+Phạm+Việt+Anh;Creative+Developer;Backend+Logic+%2B+Frontend+Magic;Welcome+to+my+Digital+Space" alt="Typing SVG" />
+</div>
 
-  <img src="https://media.giphy.com/media/qgQUggAC3PfvY8nYn3/giphy.gif" width="80" />
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100%" height="3px">
+</div>
 
-  # Hi, I'm Phạm Việt Anh <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">
+<div align="center">
+  <br>
+  <img src="https://media.giphy.com/media/L1R1TVI2uGc81gUF86/giphy.gif" width="180"/>
+  
+  ### <span style="color:#f59e0b">CORE SYSTEM ENGINEER</span> & <span style="color:#00f3ff">INTERACTIVE WEB CREATOR</span>
 
-  ### Fullstack Developer | .NET & Cross-platform Engineer
-
-  <p align="center">
-    <i>"Tư duy logic chặt chẽ của Backend kết hợp với trải nghiệm tương tác mượt mà của Frontend."</i>
+  <p align="center"> 
+    <i>"Biến những dòng code khô khan thành trải nghiệm sống động."</i>
   </p>
 
-  <div align="center">
+  <p align="center">
     <a href="mailto:phamvietanh19218@gmail.com">
-      <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+      <img src="https://img.shields.io/badge/Email-Me-d14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=101010" />
     </a>
     <a href="https://github.com/VietPh37030">
-      <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+      <img src="https://img.shields.io/badge/Github-Profile-000000?style=for-the-badge&logo=github&logoColor=white&labelColor=101010" />
     </a>
-  </div>
-
+  </p>
 </div>
 
-<br />
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100%" height="3px">
+</div>
 
----
-
-### 🛠 Tech Stack & Skills
-
-Dưới đây là các công nghệ và ngôn ngữ tôi sử dụng để xây dựng hệ thống và ứng dụng:
+<h2 align="center">⚡ THE ARSENAL (TECH STACK) ⚡</h2>
 
 <div align="center">
 
-| **Core Backend & DB** | **Frontend & Mobile** | **Tools & Others** |
+| **CORE & BACKEND** | **FRONTEND & CREATIVE** | **MOBILE & TOOLS** |
 | :---: | :---: | :---: |
-| ![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white) | ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) | ![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white) |
-| ![.NET Core](https://img.shields.io/badge/.NET%20Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white) | ![Next.js](https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) | ![Three.js](https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white) |
-| ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) | ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white) | ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white) |
-| ![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white) | ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) | ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white) |
+| <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" /> | <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> | <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" /> |
+| <img src="https://img.shields.io/badge/.NET_Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" /> | <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" /> | <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" /> |
+| <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white" /> | <img src="https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white" /> | <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" /> |
+| <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" /> | <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" /> | <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" /> |
 
 </div>
 
----
+<br>
 
-### 🌟 About This Portfolio Project
-
-Source code trong repository này là trang Portfolio cá nhân của tôi (phiên bản V4), được thiết kế để thể hiện khả năng xử lý **Frontend nâng cao** và **Tư duy thuật toán**.
-
-#### 🔥 Technical Highlights (Tính năng kỹ thuật):
-
-1.  **3D Virtual Monitor (CSS 3D & Iframe):**
-    * Sử dụng `perspective` và `transform: rotate3d` để tạo ra một chiếc màn hình TV ảo.
-    * Tích hợp trực tiếp một Game ReactJS (Cartoon Game) vào trong màn hình này thông qua `iframe`, cho phép tương tác thời gian thực ngay trên trang chủ.
-
-2.  **Logic Algorithm Game (Knight's Tour):**
-    * Tích hợp mini-game thuật toán "Mã đi tuần" trên bàn cờ vua.
-    * Code thuần JavaScript để xử lý logic di chuyển hợp lệ của quân Mã và tính toán trạng thái game.
-
-3.  **Interactive 3D Background:**
-    * Sử dụng thư viện **Three.js** để render hệ thống hạt (Particles) không gian 3 chiều.
-    * Hiệu ứng chuyển động theo vị trí con trỏ chuột (Mouse Parallax).
-
-4.  **Real-time Localization (i18n):**
-    * Hệ thống đa ngôn ngữ (Tiếng Việt / English / Chinese) được xử lý ngay tại Client-side (DOM Manipulation), chuyển đổi tức thì không cần tải lại trang.
-
----
-
-### 📦 How to Run
-
-Dự án này là static web thuần (HTML/JS/CSS) nên rất dễ chạy:
-
-1.  **Clone repo:**
-    ```bash
-    git clone [https://github.com/VietPh37030/portfolio-v4.git](https://github.com/VietPh37030/portfolio-v4.git)
-    ```
-2.  **Open:**
-    Chỉ cần mở file `index.html` bằng trình duyệt (Chrome, Edge, Safari...).
-
----
+<h2 align="center">🚀 FEATURED: PORTFOLIO V4 SOURCE CODE</h2>
 
 <div align="center">
-  <i>Thanks for visiting! code with ❤️ by PVA.</i>
+  <i>Đây là source code của trang Portfolio cá nhân, nơi tôi thử nghiệm các kỹ thuật Frontend mới nhất.</i>
+</div>
+<br>
+
+<div align="center">
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <h3>🎮 3D Virtual Monitor</h3>
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm91Zml2cnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/26tn33aiTi1jbp6xj/giphy.gif" width="100%" />
+      <br/><br/>
+      <i>Nhúng Game ReactJS trực tiếp vào màn hình TV ảo ngay trên web bằng CSS 3D Transform.</i>
+    </td>
+    <td width="50%" align="center">
+      <h3>🧠 Logic Algorithm</h3>
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3bnZ1Y2V3biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/LdOyjZ7io5Msw/giphy.gif" width="100%" />
+      <br/><br/>
+      <i>Mini-game "Knight's Tour" (Mã đi tuần) xử lý bằng thuật toán thuần JavaScript.</i>
+    </td>
+  </tr>
+</table>
+</div>
+
+<br>
+
+<h2 align="center">📊 GITHUB ANALYTICS</h2>
+
+<div align="center">
+  <a href="https://github.com/VietPh37030">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=VietPh37030&show_icons=true&theme=tokyonight&hide_border=true&bg_color=000000&title_color=00f3ff&icon_color=f59e0b" />
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VietPh37030&layout=compact&theme=tokyonight&hide_border=true&bg_color=000000&title_color=00f3ff" />
+  </a>
+</div>
+
+<br>
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=VietPh37030&theme=tokyonight&hide_border=true&background=000000&ring=f59e0b&fire=f59e0b&currStreakLabel=00f3ff" alt="GitHub Streak" />
+</div>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100%" height="3px">
+</div>
+
+<br>
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=00f3ff&height=60&section=footer" width="100%"/>
 </div>
