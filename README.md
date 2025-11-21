@@ -8,7 +8,8 @@
 
 <div align="center">
   <br>
-  <img src="https://github.com/VietPh37030/portfolio-v4/blob/main/assets/mr_krabs_welcome.gif?raw=true" width="180"/> 
+  <img src="https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPOSITORY_NAME]/blob/main/assets/mr_krabs_welcome.gif?raw=true" width="180"/> 
+  
   ### <span style="color:#f59e0b">CORE SYSTEM ENGINEER</span> & <span style="color:#00f3ff">INTERACTIVE WEB CREATOR</span>
 
   <p align="center"> 
@@ -19,7 +20,7 @@
     <a href="mailto:phamvietanh19218@gmail.com">
       <img src="https://img.shields.io/badge/Email-Me-d14836?style=for-the-badge&logo=gmail&logoColor=white&labelColor=101010" />
     </a>
-    <a href="https://github.com/VietPh37030">
+    <a href="https://github.com/[YOUR_GITHUB_USERNAME]">
       <img src="https://img.shields.io/badge/Github-Profile-000000?style=for-the-badge&logo=github&logoColor=white&labelColor=101010" />
     </a>
   </p>
@@ -35,14 +36,15 @@
 
 | **CORE & BACKEND** | **FRONTEND & CREATIVE** | **MOBILE & TOOLS** |
 | :---: | :---: | :---: |
-| <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" /> | <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> | <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" /> |
-| <img src="https://img.shields.io/badge/.NET_Core-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" /> | <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" /> | <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" /> |
-| <img src="https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white" /> | <img src="https://img.shields.io/badge/Three.js-black?style=for-the-badge&logo=three.js&logoColor=white" /> | <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" /> |
-| <img src="https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white" /> | <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" /> | <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" /> |
+| <img src="https://skillicons.dev/icons?i=csharp,dotnet,oracle,mssql&theme=dark" width="150" alt="Backend Technologies" /> | <img src="https://skillicons.dev/icons?i=react,nextjs,threejs,tailwind&theme=dark" width="150" alt="Frontend Technologies" /> | <img src="https://skillicons.dev/icons?i=flutter,dart,docker,git&theme=dark" width="150" alt="Mobile and Tools" /> |
 
 </div>
 
 <br>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100%" height="3px">
+</div>
 
 <h2 align="center">🚀 FEATURED: PORTFOLIO V4 SOURCE CODE</h2>
 
@@ -56,13 +58,13 @@
   <tr>
     <td width="50%" align="center">
       <h3>🎮 3D Virtual Monitor</h3>
-      <img src="https://github.com/VietPh37030/portfolio-v4/blob/main/assets/monitor_3d_demo.gif?raw=true" width="100%" />
+      <img src="https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPOSITORY_NAME]/blob/main/assets/monitor_3d_demo.gif?raw=true" width="100%" />
       <br/><br/>
       <i>Nhúng Game ReactJS trực tiếp vào màn hình TV ảo ngay trên web bằng CSS 3D Transform.</i>
     </td>
     <td width="50%" align="center">
       <h3>🧠 Logic Algorithm</h3>
-      <img src="https://github.com/VietPh37030/portfolio-v4/blob/main/assets/knight_tour_game.gif?raw=true" width="100%" />
+      <img src="https://github.com/[YOUR_GITHUB_USERNAME]/[YOUR_REPOSITORY_NAME]/blob/main/assets/knight_tour_game.gif?raw=true" width="100%" />
       <br/><br/>
       <i>Mini-game "Knight's Tour" (Mã đi tuần) xử lý bằng thuật toán thuần JavaScript.</i>
     </td>
@@ -72,19 +74,23 @@
 
 <br>
 
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7ed2.gif" width="100%" height="3px">
+</div>
+
 <h2 align="center">📊 GITHUB ANALYTICS</h2>
 
 <div align="center">
-  <a href="https://github.com/VietPh37030">
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=VietPh37030&show_icons=true&theme=tokyonight&hide_border=true&bg_color=000000&title_color=00f3ff&icon_color=f59e0b" />
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=VietPh37030&layout=compact&theme=tokyonight&hide_border=true&bg_color=000000&title_color=00f3ff" />
+  <a href="https://github.com/[YOUR_GITHUB_USERNAME]">
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=[YOUR_GITHUB_USERNAME]&show_icons=true&theme=tokyonight&hide_border=true&bg_color=000000&title_color=00f3ff&icon_color=f59e0b" alt="GitHub Stats" />
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=[YOUR_GITHUB_USERNAME]&layout=compact&theme=tokyonight&hide_border=true&bg_color=000000&title_color=00f3ff" alt="Top Languages" />
   </a>
 </div>
 
 <br>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=VietPh37030&theme=tokyonight&hide_border=true&background=000000&ring=f59e0b&fire=f59e0b&currStreakLabel=00f3ff" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=[YOUR_GITHUB_USERNAME]&theme=tokyonight&hide_border=true&background=000000&ring=f59e0b&fire=f59e0b&currStreakLabel=00f3ff" alt="GitHub Streak" />
 </div>
 
 <div align="center">
